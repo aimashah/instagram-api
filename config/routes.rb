@@ -25,5 +25,5 @@ Rails.application.routes.draw do
   # post "/comments/:id", to: "comments#create"
 
   # Resources for posts, only allowing index and create
-  resources :posts, only: [ :index, :create] 
+  resources :posts, only: [ :index, :create ]
 end

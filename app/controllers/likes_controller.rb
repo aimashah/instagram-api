@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   before_action :authorize_request
   def toggle
   post = Post.find(params[:post_id])

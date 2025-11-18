@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post "/posts/:post_id/comments", to: "comments#create"   # Keep this one
 
   # Share route, correct
-  post "/posts/:post_id/share", to: "shares#create" 
+  post "/posts/:post_id/share", to: "shares#create"
 
   # Create post route
   post "/posts", to: "posts#create"
@@ -19,11 +19,11 @@ Rails.application.routes.draw do
   # In routes.rb
 
   # This was a duplicate route, REMOVE it
-  # post "/likes/:id", to: "likes#toggle" 
+  # post "/likes/:id", to: "likes#toggle"
 
   # This was a duplicate route, REMOVE it
   # post "/comments/:id", to: "comments#create"
 
   # Resources for posts, only allowing index and create
-  resources :posts, only: [:index, :create]
+  resources :posts, only: [ :index, :create] 
 end

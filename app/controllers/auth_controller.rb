@@ -1,5 +1,4 @@
 class AuthController < ApplicationController
-
   def signup
     user = User.new(user_params)
 
@@ -45,5 +44,4 @@ class AuthController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
-
 end

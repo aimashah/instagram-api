@@ -9,4 +9,3 @@ class Post < ApplicationRecord
     image.attached? ? Rails.application.routes.url_helpers.url_for(image) : nil
   end
 end
-

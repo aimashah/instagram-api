@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :shares, dependent: :destroy
   has_one_attached :image
+  has_many :shares
   validates :caption, presence: true
   def image_url
     image.attached? ? Rails.application.routes.url_helpers.url_for(image) : nil

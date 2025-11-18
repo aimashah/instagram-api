@@ -4,8 +4,8 @@ class SharesController < ApplicationController
   def create
     post = Post.find(params[:post_id])
 
-    Share.create(user_id: @current_user.id, post_id: post.id)
+    Share.create(user: @current_user, post: post)
 
-    render json: { message: "Post shared successfully" }
+    render json: { message: "Post shared successfully" }, status: :created
   end
 end

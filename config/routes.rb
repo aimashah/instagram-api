@@ -3,16 +3,17 @@ Rails.application.routes.draw do
   post "/login", to: "auth#login"
 
   # Like route, correct
-  post "/posts/:post_id/like", to: "likes#toggle"    # Keep this one
+  post "/posts/:post_id/like", to: "likes#toggle"    
 
   # Comment route, correct
-  post "/posts/:post_id/comments", to: "comments#create"   # Keep this one
+  post "/posts/:post_id/comments", to: "comments#create"  
 
   # Share route, correct
   post "/posts/:post_id/share", to: "shares#create"
 
   # Create post route
   post "/posts", to: "posts#create"
+  post "/posts/:post_id/share", to: "shares#create"
 
   # Get posts route
   get "/posts", to: "posts#index"

@@ -25,7 +25,8 @@ class PostsController < ApplicationController
               name: c.user.name
             }
           }
-        }
+        },
+        shares: p.shares.map { |s| s.user.name }
       }
     }
   end

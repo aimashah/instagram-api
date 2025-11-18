@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    comment = post.comments.create(
+
+    comment = post.comments.create!(
       user: @current_user,
       text: params[:text]
     )
@@ -15,6 +16,6 @@ class CommentsController < ApplicationController
         id: @current_user.id,
         name: @current_user.name
       }
-    }
+    }, status: :created
   end
 end

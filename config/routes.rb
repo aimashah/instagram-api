@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   post "/login", to: "auth#login"
 
   # Like route, correct
-  post "/posts/:post_id/like", to: "likes#toggle"    
+  post "/posts/:post_id/like", to: "likes#toggle"
 
   # Comment route, correct
-  post "/posts/:post_id/comments", to: "comments#create"  
+  post "/posts/:post_id/comments", to: "comments#create"
 
   # Share route, correct
   post "/posts/:post_id/share", to: "shares#create"

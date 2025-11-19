@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_11_18_055200) do
+ActiveRecord::Schema[8.1].define(version: 2025_11_19_062255) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -56,6 +56,15 @@ ActiveRecord::Schema[8.1].define(version: 2025_11_18_055200) do
     t.integer "user_id", null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.boolean "read"
+    t.integer "receiver_id"
+    t.integer "sender_id"
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|

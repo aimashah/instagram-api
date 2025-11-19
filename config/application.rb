@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module InstagramApi
   class Application < Rails::Application
+   # config/application.rb
+
+   config.action_cable.url = "ws://localhost:3000/cable"
+   config.action_cable.allowed_request_origins = [ "http://localhost:5173", "http://your-frontend-url.com" ]
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 8.1
 

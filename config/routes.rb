@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   post "/posts", to: "posts#create"
   post "/posts/:post_id/share", to: "shares#create"
 
+  resources :messages, only: [ :index, :create ]
+  resources :users, only: [ :index ]
+
+  mount ActionCable.server => "/cable"
+
   # Get posts route
   get "/posts", to: "posts#index"
   # In routes.rb

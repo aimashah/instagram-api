@@ -14,7 +14,8 @@ class LikesController < ApplicationController
 
   render json: {
     liked: liked,
-    likes_count: post.likes.count
+    likes_count: post.likes.count,
+    users_who_liked: post.likes.includes(:user).map { |like| like.user.name }
   }
   end
 end

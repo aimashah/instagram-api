@@ -42,7 +42,7 @@ class MessagesController < ApplicationController
 
   def serialize_message(message)
     message.as_json(
-      only: [ :id, :content, :sender_id, :receiver_id, :created_at, :updated_at ],
+      only: [ :id, :content, :sender_id, :receiver_id, :created_at, :updated_at, :read ],
       include: {
         sender: { only: [ :id, :name ] },
         receiver: { only: [ :id, :name ] }

@@ -17,6 +17,12 @@ Rails.application.routes.draw do
 
   resources :messages, only: [ :index, :create ]
   resources :users, only: [ :index ]
+  resources :notifications, only: [ :index, :update ] do
+    collection do
+      post :mark_thread
+    end
+  end
+  post "/messages/mark_read", to: "notifications#mark_thread"
 
   mount ActionCable.server => "/cable"
 
